@@ -1,138 +1,196 @@
 /* ============================================================
-   STYLE.CSS — Rekomendasi Buku (versi responsif)
-   Pendekatan: MOBILE-FIRST (style dasar = HP, lalu diperbesar)
+   STYLE.CSS — Rekomendasi Buku
+   Gaya: editorial museum (terinspirasi Frans Hals Museum)
+   Palet flat: teal / koral / kuning di atas latar krem.
+   Tetap mobile-first & responsif.
    ============================================================ */
 
-/* --- Font kustom dari repo --- */
 @font-face { font-family: 'font1'; src: url('font1.ttf'); }
 @font-face { font-family: 'font2'; src: url('font2.ttf'); }
 @font-face { font-family: 'font3'; src: url('font3.ttf'); }
 
-/* --- Variabel warna (palet asli proyek) --- */
 :root {
-  --navy-tua:  #0F1535;
-  --navy:      #1E2761;
-  --abu:       #5A6182;
-  --biru-muda: #CADCFC;
-  --merah:     #C44545;
-  --hijau:     #5EA854;
-  --kuning:    #F2C94C;
+  --teal:   #49C5B6;
+  --coral:  #FF9398;
+  --yellow: #ECD06F;
+
+  --cream:    #F6F1E7;
+  --cream-2:  #FFFDF8;
+  --ink:      #16201E;
+  --ink-soft: #5B615D;
+
+  --display: 'font3', 'Arial Black', sans-serif;
+  --serif:   Georgia, 'Times New Roman', serif;
+  --body:    -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
 }
 
-/* STEP 2: reset + box-sizing supaya padding tidak menambah lebar */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
+html { scroll-behavior: smooth; }
 body {
-  font-family: Arial, sans-serif;
-  color: var(--navy-tua);
-  line-height: 1.6;
-  /* padding pakai clamp: kecil di HP, lega di PC */
-  padding: clamp(16px, 4vw, 40px);
+  font-family: var(--body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.container { width: 90%; max-width: 1120px; margin: 0 auto; }
+
+/* ---------- NAVIGASI ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(246, 241, 231, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(22, 32, 30, 0.08);
+}
+.topbar .container {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 10px; padding: 18px 0;
+}
+.brand {
+  font-family: var(--display);
+  font-size: 1.15rem; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.brand .dot { color: var(--coral); }
+.menu { display: flex; flex-wrap: wrap; gap: 22px; list-style: none; }
+.menu a {
+  position: relative; text-decoration: none; color: var(--ink);
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 0;
+}
+.menu a::after {
+  content: ''; position: absolute; left: 0; bottom: -2px;
+  width: 100%; height: 2px; background: var(--teal);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+}
+.menu a:hover::after, .menu a.is-active::after { transform: scaleX(1); }
+.menu a.is-active { color: var(--teal); }
+
+/* ---------- HERO ---------- */
+.hero { padding: clamp(48px, 9vw, 110px) 0 clamp(40px, 7vw, 80px); }
+.hero-grid {
+  display: grid; grid-template-columns: 1fr; gap: clamp(32px, 6vw, 64px);
+  align-items: center;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 20px;
+}
+.eyebrow::before {
+  content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--coral);
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 9vw, 5.6rem);
+  line-height: 0.98; letter-spacing: -0.01em; margin-bottom: 22px;
+}
+.hero h1 .hl { color: var(--teal); }
+.lead {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--ink-soft); max-width: 46ch;
+}
+.hero-figure { position: relative; }
+.hero-figure::before {
+  content: ''; position: absolute; inset: 0;
+  transform: translate(18px, 18px); z-index: 0;
+  background: var(--yellow); border-radius: 14px;
+}
+.hero-figure img {
+  position: relative; z-index: 1;
+  width: 100%; height: auto; display: block;
+  border-radius: 14px; aspect-ratio: 4 / 5; object-fit: cover;
 }
 
-/* STEP 3: container dengan max-width agar nyaman di monitor lebar */
-.container {
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
+/* ---------- JUDUL SECTION ---------- */
+.section { padding: clamp(40px, 7vw, 80px) 0; }
+.section-head {
+  display: flex; align-items: baseline; gap: 16px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+.section-head .num { font-family: var(--display); font-size: 1rem; color: var(--ink-soft); }
+.section-head h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1;
 }
 
-/* --- Navigasi --- */
-nav {
-  background-color: var(--biru-muda);
-  padding: 12px clamp(12px, 3vw, 24px);
-  margin-bottom: 30px;
-  border-radius: 8px;
-  display: flex;
-  flex-wrap: wrap;          /* link turun ke bawah kalau HP sempit */
-  gap: 8px 18px;
-}
-nav a {
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a:hover { text-decoration: underline; }
-
-/* STEP 5: tipografi fluid pakai clamp() (vw dipakai dengan aman) */
-h1 {
-  font-family: 'font3', Arial, sans-serif;
-  color: var(--navy);
-  font-size: clamp(1.6rem, 5vw, 2.8rem);
-  margin-bottom: 12px;
-}
-h2 {
-  color: var(--navy);
-  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-  margin: 24px 0 12px;
-}
-p { margin-bottom: 12px; }
-.intro { color: var(--abu); font-style: italic; }
-
-hr { border: none; border-top: 1px solid var(--biru-muda); margin: 28px 0; }
-
-/* STEP 4: gambar responsif — tidak akan melebihi lebar layar */
-img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
-
-.gambar-utama { max-width: 250px; margin: 16px 0; }
-
-/* STEP 6: daftar buku jadi grid yang menyesuaikan sendiri */
-.daftar-buku {
-  display: grid;
-  grid-template-columns: 1fr;            /* HP: 1 kolom */
-  gap: 24px;
-}
+/* ---------- DAFTAR BUKU ---------- */
+.daftar-buku { display: grid; grid-template-columns: 1fr; gap: clamp(22px, 3vw, 36px); }
 .kartu-buku {
-  background: #fff;
-  border: 1px solid var(--biru-muda);
-  border-radius: 12px;
-  padding: 16px;
+  --accent: var(--teal);
+  background: var(--cream-2); border-radius: 14px; padding: 22px;
+  border: 1px solid rgba(22, 32, 30, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.kartu-buku img { margin: 12px 0; max-width: 180px; }
-.kartu-buku h3 { color: var(--navy); margin-bottom: 4px; }
-.kartu-buku .penulis { color: var(--abu); font-style: italic; }
-.kartu-buku a {
-  display: inline-block;
-  margin-top: 8px;
-  color: var(--navy);
-  font-weight: bold;
+.kartu-buku:nth-child(3n+1) { --accent: var(--teal); }
+.kartu-buku:nth-child(3n+2) { --accent: var(--coral); }
+.kartu-buku:nth-child(3n+3) { --accent: var(--yellow); }
+.kartu-buku:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(22, 32, 30, 0.14); }
+.kartu-buku .num-badge {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--accent); color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-size: 1.1rem; margin-bottom: 16px;
+}
+.kartu-buku .cover {
+  width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+  border-radius: 10px; margin-bottom: 16px; background: var(--cream);
+}
+.kartu-buku h3 { font-family: var(--display); font-size: 1.35rem; line-height: 1.1; margin-bottom: 4px; }
+.kartu-buku .penulis { font-family: var(--serif); font-style: italic; color: var(--ink-soft); margin-bottom: 16px; }
+.kartu-buku .tonton {
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none; color: var(--ink);
+  font-weight: 700; font-size: 0.82rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-bottom: 2px solid var(--accent); padding-bottom: 3px;
+}
+.kartu-buku .tonton .arrow { transition: transform 0.25s ease; }
+.kartu-buku .tonton:hover .arrow { transform: translate(3px, -3px); }
+
+/* ---------- KUTIPAN ---------- */
+.kutipan-list { display: grid; gap: clamp(20px, 3vw, 36px); }
+.kutipan {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 4.5vw, 2.6rem);
+  line-height: 1.12; letter-spacing: -0.01em;
+  padding-left: 22px; border-left: 6px solid var(--teal);
+}
+.kutipan:nth-child(2) { border-left-color: var(--coral); }
+.kutipan:nth-child(3) { border-left-color: var(--yellow); }
+.tips {
+  margin-top: clamp(32px, 5vw, 56px);
+  background: var(--teal); color: var(--ink);
+  border-radius: 16px; padding: clamp(24px, 4vw, 44px);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+}
+.tips strong { font-family: var(--display); }
+.tips mark { background: var(--cream-2); padding: 0 6px; border-radius: 4px; }
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  border-top: 1px solid rgba(22, 32, 30, 0.1);
+  padding: 40px 0; margin-top: 40px;
+  color: var(--ink-soft); font-size: 0.92rem;
+}
+.site-footer a { color: var(--ink); font-weight: 700; }
+
+/* ---------- ANIMASI MUNCUL ---------- */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+.reveal.d1 { animation-delay: 0.08s; }
+.reveal.d2 { animation-delay: 0.18s; }
+.reveal.d3 { animation-delay: 0.28s; }
+.kartu-buku:nth-child(1) { animation: fadeUp 0.7s ease 0.10s forwards; opacity: 0; }
+.kartu-buku:nth-child(2) { animation: fadeUp 0.7s ease 0.22s forwards; opacity: 0; }
+.kartu-buku:nth-child(3) { animation: fadeUp 0.7s ease 0.34s forwards; opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  *, .reveal, .kartu-buku { animation: none !important; opacity: 1 !important; }
+  html { scroll-behavior: auto; }
 }
 
-/* --- Kotak kutipan --- */
-.kutipan-merah  { font-family: 'font1', Arial, sans-serif; font-size: clamp(1rem, 3vw, 1.25rem); color: var(--merah); }
-.kutipan-hijau  { font-family: 'font2', Georgia, serif; font-weight: bold; color: var(--hijau); }
-.kotak-tips {
-  color: var(--kuning);
-  background-color: var(--navy);
-  padding: clamp(10px, 2vw, 16px);
-  border-radius: 8px;
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
-}
-.kotak-tips mark { background: var(--kuning); padding: 0 4px; border-radius: 3px; }
-
-footer { color: var(--abu); font-size: 0.85rem; margin-top: 24px; }
-
-/* ============================================================
-   STEP 7: MEDIA QUERIES — titik device sesuai target
-   Base style di atas = HP Android & iPhone kecil (360–430px)
-   ============================================================ */
-
-/* HP besar / iPhone Pro Max */
-@media (min-width: 480px) {
-  .daftar-buku { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  nav { gap: 8px 28px; }
-}
-
-/* Laptop */
-@media (min-width: 1024px) {
-  .daftar-buku { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* PC / monitor lebar */
-@media (min-width: 1280px) {
-  body { padding: 40px clamp(40px, 6vw, 80px); }
-}
+/* ---------- BREAKPOINT ---------- */
+@media (min-width: 600px)  { .daftar-buku { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px)  { .hero-grid { grid-template-columns: 1.1fr 0.9fr; } }
+@media (min-width: 1000px) { .daftar-buku { grid-template-columns: repeat(3, 1fr); } }

@@ -2,72 +2,109 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <!-- STEP 1: viewport lengkap dengan initial-scale -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Halaman 1 - Rekomendasi Buku</title>
-  <!-- STEP 2: CSS dipisah ke file sendiri -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
 
-    <!-- STEP 3: container membungkus seluruh konten -->
-    <nav>
-      <!-- bug diperbaiki: halaman1.html -> index.html -->
-      <a href="index.html">Halaman 1</a>
-      <a href="halaman2.html">Halaman 2</a>
-      <a href="halaman3.html">Halaman 3</a>
-    </nav>
-
-    <h1>Rekomendasi Buku Self Development 2026</h1>
-    <p class="intro">Berikut beberapa buku yang menurut saya worth it dibaca.</p>
-
-    <img class="gambar-utama" src="img3.png" alt="Suasana tenang untuk membaca" />
-
-    <hr />
-
-    <h2>Daftar Buku</h2>
-
-    <!-- STEP 6: daftar buku jadi grid kartu yang responsif -->
-    <div class="daftar-buku">
-
-      <article class="kartu-buku">
-        <h3>1. Psycho-Cybernetics</h3>
-        <p class="penulis">Maxwell Maltz</p>
-        <img src="psychocybernetics.jpeg" alt="Sampul Psycho-Cybernetics" />
-        <a href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank" rel="noopener">Tonton Summary di YouTube</a>
-      </article>
-
-      <article class="kartu-buku">
-        <h3>2. Atomic Habits</h3>
-        <p class="penulis">James Clear</p>
-        <!-- nama file disamakan dengan repo (huruf kecil) -->
-        <img src="atomic habits.jpg" alt="Sampul Atomic Habits" />
-        <a href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank" rel="noopener">Tonton Summary di YouTube</a>
-      </article>
-
-      <article class="kartu-buku">
-        <h3>3. How to Win Friends and Influence People</h3>
-        <p class="penulis">Dale Carnegie</p>
-        <img src="How to win friends.jpg" alt="Sampul How to Win Friends" />
-        <a href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank" rel="noopener">Tonton Summary di YouTube</a>
-      </article>
-
+  <!-- NAVIGASI -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">Rekomendasi Buku<span class="dot">.</span></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html" class="is-active">Halaman 1</a></li>
+          <li><a href="halaman2.html">Halaman 2</a></li>
+          <li><a href="halaman3.html">Halaman 3</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <hr />
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow reveal">Self Development &middot; 2026</span>
+        <h1 class="reveal d1">Buku yang <span class="hl">mengubah</span> cara berpikir.</h1>
+        <p class="lead reveal d2">Berikut beberapa buku yang menurut saya worth it dibaca &mdash; pelan-pelan, satu per satu.</p>
+      </div>
+      <figure class="hero-figure reveal d3">
+        <img src="img3.png" alt="Suasana tenang untuk membaca" />
+      </figure>
+    </div>
+  </section>
 
-    <h2>Kenapa Membaca?</h2>
-    <p class="kutipan-merah">Satu buku bisa mengubah cara kita memandang diri sendiri.</p>
-    <p class="kutipan-hijau">Kebiasaan kecil yang konsisten mengalahkan motivasi sesaat.</p>
-    <p class="kotak-tips">Tips: baca <mark>10 halaman sehari</mark>, sisanya mengikuti.</p>
+  <!-- DAFTAR BUKU -->
+  <section class="section" id="daftar">
+    <div class="container">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Daftar Buku</h2>
+      </div>
 
-    <hr />
+      <div class="daftar-buku">
 
-    <footer>
-      Lanjut ke <a href="halaman2.html">Halaman 2 — Review Buku</a>
-    </footer>
+        <article class="kartu-buku">
+          <div class="num-badge">1</div>
+          <img class="cover" src="psychocybernetics.jpeg" alt="Sampul Psycho-Cybernetics" />
+          <h3>Psycho-Cybernetics</h3>
+          <p class="penulis">Maxwell Maltz</p>
+          <a class="tonton" href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank" rel="noopener">
+            Tonton Summary <span class="arrow">&#8599;</span>
+          </a>
+        </article>
 
-  </div>
+        <article class="kartu-buku">
+          <div class="num-badge">2</div>
+          <img class="cover" src="atomic habits.jpg" alt="Sampul Atomic Habits" />
+          <h3>Atomic Habits</h3>
+          <p class="penulis">James Clear</p>
+          <a class="tonton" href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank" rel="noopener">
+            Tonton Summary <span class="arrow">&#8599;</span>
+          </a>
+        </article>
+
+        <article class="kartu-buku">
+          <div class="num-badge">3</div>
+          <img class="cover" src="How to win friends.jpg" alt="Sampul How to Win Friends" />
+          <h3>How to Win Friends &amp; Influence People</h3>
+          <p class="penulis">Dale Carnegie</p>
+          <a class="tonton" href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank" rel="noopener">
+            Tonton Summary <span class="arrow">&#8599;</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KENAPA MEMBACA -->
+  <section class="section" id="kenapa">
+    <div class="container">
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>Kenapa Membaca?</h2>
+      </div>
+
+      <div class="kutipan-list">
+        <p class="kutipan">Satu buku bisa mengubah cara kita memandang diri sendiri.</p>
+        <p class="kutipan">Kebiasaan kecil yang konsisten mengalahkan motivasi sesaat.</p>
+      </div>
+
+      <div class="tips">
+        <strong>Tips:</strong> baca <mark>10 halaman sehari</mark>, sisanya akan mengikuti dengan sendirinya.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      Lanjut ke <a href="halaman2.html">Halaman 2 &mdash; Review Buku &#8594;</a>
+    </div>
+  </footer>
+
 </body>
 </html>
