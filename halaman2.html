@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Halaman 2 - Review Buku</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      color: #0F1535;
-    }
-    h1 {
-      color: #1E2761;
-    }
-    nav {
-      background-color: #CADCFC;
-      padding: 10px 20px;
-      margin-bottom: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- Navigasi antar halaman -->
-  <nav>
-    <a href="index.html">Halaman 1</a> |
-    <a href="halaman2.html">Halaman 2</a> |
-    <a href="halaman3.html">Halaman 3</a>
-  </nav>
+  <!-- NAVIGASI -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">Rekomendasi Buku<span class="dot">.</span></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Halaman 1</a></li>
+          <li><a href="halaman2.html" class="is-active">Halaman 2</a></li>
+          <li><a href="halaman3.html">Halaman 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Halaman 2 &mdash; Review Buku</h1>
+  <!-- HEADER HALAMAN -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Bagian 02</span>
+      <h1 class="reveal d1">Review Buku</h1>
+      <p class="lead reveal d2">Catatan singkat dari dua buku favorit &mdash; apa intinya dan kenapa layak dibaca.</p>
+    </div>
+  </section>
 
-  <hr />
+  <!-- REVIEW -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
 
-  <h2 style="color: #1E2761;">Psycho-Cybernetics</h2>
+      <article class="review">
+        <figure class="review-figure">
+          <img src="img1.png" alt="Ilustrasi suasana reflektif" />
+        </figure>
+        <div class="review-body">
+          <span class="kicker">Maxwell Maltz</span>
+          <h2>Psycho-Cybernetics</h2>
+          <p>Buku ini membahas bagaimana <em>self-image</em> memengaruhi keberhasilan kita. Ubah dulu gambaran diri, maka perilaku akan mengikuti.</p>
+          <a class="tonton" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            Tonton ringkasan <span class="arrow">&#8599;</span>
+          </a>
+        </div>
+      </article>
 
-  <img src="img1.png" alt="Ilustrasi suasana reflektif"
-       style="width: 250px; height: auto; border: 3px solid #1E2761;" />
+      <article class="review">
+        <figure class="review-figure">
+          <img src="img2.png" alt="Ilustrasi pemandangan" />
+        </figure>
+        <div class="review-body">
+          <span class="kicker">James Clear</span>
+          <h2>Atomic Habits</h2>
+          <p>James Clear menunjukkan bahwa perubahan 1% setiap hari menumpuk jadi hasil besar. Fokus pada sistem, bukan sekadar tujuan.</p>
+        </div>
+      </article>
 
-  <p style="background-color: #CADCFC; padding: 12px 20px; margin: 16px 0; border-radius: 8px;">
-    Buku karya <strong>Maxwell Maltz</strong> ini membahas bagaimana
-    <em>self-image</em> memengaruhi keberhasilan kita. Ubah dulu gambaran diri,
-    maka perilaku akan mengikuti.
-  </p>
+    </div>
+  </section>
 
-  <p>
-    Sumber tambahan:
-    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Tonton ringkasan di YouTube &nearr;</a>
-  </p>
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <p class="lead" style="margin-bottom:18px;">Punya rekomendasi buku lain?</p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:contoh@email.com">Kirim Email &#8594;</a>
+        <a class="btn" href="halaman3.html" style="background:var(--teal);color:var(--ink);">Lanjut ke Halaman 3</a>
+      </div>
+    </div>
+  </section>
 
-  <hr />
-
-  <h2 style="color: #1E2761;">Atomic Habits</h2>
-
-  <img src="img2.png" alt="Ilustrasi pemandangan"
-       style="width: 250px; height: auto; border-radius: 8px;" />
-
-  <p style="margin-top: 16px;">
-    <strong>James Clear</strong> menunjukkan bahwa perubahan 1% setiap hari
-    menumpuk jadi hasil besar. Fokus pada sistem, bukan sekadar tujuan.
-  </p>
-
-  <hr />
-
-  <p>
-    Link internal:
-    <a href="index.html">Kembali ke Halaman 1</a> |
-    <a href="halaman3.html">Lanjut ke Halaman 3</a>
-  </p>
-
-  <p>
-    Punya rekomendasi?
-    <a href="mailto:contoh@email.com">Kirim email ke contoh@email.com</a>
-  </p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <a href="index.html">&#8592; Kembali ke Halaman 1</a>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -1,103 +1,72 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Halaman 3 - Tips Membaca</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      color: #0F1535;
-    }
-    h1 {
-      color: #1E2761;
-    }
-    nav {
-      background-color: #CADCFC;
-      padding: 10px 20px;
-      margin-bottom: 30px;
-    }
-    @font-face {
-      font-family: 'font1';
-      src: url('font1.ttf');
-    }
-    @font-face {
-      font-family: 'font2';
-      src: url('font2.ttf');
-    }
-    @font-face {
-      font-family: 'font3';
-      src: url('font3.ttf');
-    }
-    li {
-      margin-bottom: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- Navigasi antar halaman -->
-  <nav>
-    <a href="index.html">Halaman 1</a> |
-    <a href="halaman2.html">Halaman 2</a> |
-    <a href="halaman3.html">Halaman 3</a>
-  </nav>
+  <!-- NAVIGASI -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">Rekomendasi Buku<span class="dot">.</span></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Halaman 1</a></li>
+          <li><a href="halaman2.html">Halaman 2</a></li>
+          <li><a href="halaman3.html" class="is-active">Halaman 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <h1 style="font-family: 'font3', Arial, sans-serif;">Halaman 3 &mdash; Tips Membaca</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow reveal">Bagian 03</span>
+        <h1 class="reveal d1" style="font-size:clamp(2.4rem,8vw,4.6rem);">Tips <span class="hl">Membaca</span></h1>
+        <p class="lead reveal d2">Supaya buku tidak cuma jadi pajangan di rak.</p>
+      </div>
+      <figure class="hero-figure reveal d3">
+        <img src="img3.png" alt="Suasana tenang untuk membaca" />
+      </figure>
+    </div>
+  </section>
 
-  <p style="color: #5A6182; font-style: italic;">
-    Supaya buku tidak cuma jadi pajangan di rak.
-  </p>
+  <!-- TIPS -->
+  <section class="section" id="tips" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Empat Tips Konsisten</h2>
+      </div>
 
-  <img src="img3.png" alt="Suasana tenang untuk membaca" width="250"
-       style="border-radius: 8px;" />
+      <ol class="tips-list">
+        <li>Mulai dari <mark>10 halaman sehari</mark>, jangan langsung berat.</li>
+        <li>Pilih buku sesuai minat, bukan yang sedang viral.</li>
+        <li>Catat satu kalimat favorit dari tiap bab.</li>
+        <li>Bawa buku ke mana-mana untuk mengisi waktu tunggu.</li>
+      </ol>
 
-  <hr />
+      <blockquote class="pullquote">
+        Tujuan membaca bukan menyelesaikan banyak buku, tapi memahami dan menerapkan isinya.
+      </blockquote>
 
-  <h2 style="color: #1E2761;">Empat Tips Konsisten</h2>
+      <div class="highlight-box">
+        Selamat membaca dan semoga konsisten!
+      </div>
+    </div>
+  </section>
 
-  <ol>
-    <li>Mulai dari <mark>10 halaman sehari</mark>, jangan langsung berat.</li>
-    <li>Pilih buku sesuai minat, bukan yang sedang viral.</li>
-    <li>Catat satu kalimat favorit dari tiap bab.</li>
-    <li>Bawa buku ke mana-mana untuk mengisi waktu tunggu.</li>
-  </ol>
-
-  <hr />
-
-  <p style="
-    font-family: 'font2', Georgia, serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFFFFF;
-    background-color: #1E2761;
-    padding: 16px 24px;
-    margin: 12px 0;
-    border-radius: 8px;
-  ">
-    Tujuan membaca bukan menyelesaikan banyak buku, tapi memahami dan menerapkan isinya.
-  </p>
-
-  <p style="
-    font-family: 'font1', Arial, sans-serif;
-    color: #1E2761;
-    background-color: #F2C94C;
-    padding: 12px 20px;
-    border: 2px solid #1E2761;
-    border-radius: 4px;
-  ">
-    Selamat membaca dan semoga konsisten!
-  </p>
-
-  <hr />
-
-  <p style="color: #5A6182; font-size: 13px;">
-    Kembali ke <a href="index.html">Halaman 1 &mdash; Rekomendasi Buku</a>
-  </p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      Kembali ke <a href="index.html">Halaman 1 &mdash; Rekomendasi Buku &#8594;</a>
+    </div>
+  </footer>
 
 </body>
 </html>
