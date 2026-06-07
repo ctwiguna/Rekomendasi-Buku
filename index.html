@@ -1,91 +1,73 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <!-- STEP 1: viewport lengkap dengan initial-scale -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Halaman 1 - Rekomendasi Buku</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      color: #0F1535;
-    }
-    h1 {
-      color: #1E2761;
-    }
-    nav {
-      background-color: #CADCFC;
-      padding: 10px 20px;
-      margin-bottom: 30px;
-    }
-    @font-face {
-      font-family: 'font1';
-      src: url('font1.ttf');
-    }
-    @font-face {
-      font-family: 'font2';
-      src: url('font2.ttf');
-    }
-    @font-face {
-      font-family: 'font3';
-      src: url('font3.ttf');
-    }
-  </style>
+  <!-- STEP 2: CSS dipisah ke file sendiri -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <nav>
-    <a href="halaman1.html">Halaman 1</a> |
-    <a href="halaman2.html">Halaman 2</a> |
-    <a href="halaman3.html">Halaman 3</a>
-  </nav>
+  <div class="container">
 
-  <h1 style="font-family: 'font3', Arial, sans-serif;">Rekomendasi Buku Self Development 2026</h1>
+    <!-- STEP 3: container membungkus seluruh konten -->
+    <nav>
+      <!-- bug diperbaiki: halaman1.html -> index.html -->
+      <a href="index.html">Halaman 1</a>
+      <a href="halaman2.html">Halaman 2</a>
+      <a href="halaman3.html">Halaman 3</a>
+    </nav>
 
-  <p style="color: #5A6182; font-style: italic;">
-    Berikut beberapa buku yang menurut saya worth it dibaca.
-  </p>
+    <h1>Rekomendasi Buku Self Development 2026</h1>
+    <p class="intro">Berikut beberapa buku yang menurut saya worth it dibaca.</p>
 
-  <img src="img3.png" alt="Suasana tenang untuk membaca" width="250"
-       style="border-radius: 8px;" />
+    <img class="gambar-utama" src="img3.png" alt="Suasana tenang untuk membaca" />
 
-  <hr />
+    <hr />
 
-  <h2 style="color: #1E2761;">Daftar Buku</h2>
+    <h2>Daftar Buku</h2>
 
-  <p><u>1. Psycho-Cybernetics</u> — <i>Maxwell Maltz</i></p>
-  <br><img src="psychocybernetics.jpeg">
-  <br><a href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank">Tonton Summary di YouTube</a><br>
-  <p><u>2. Atomic Habits</u> — <i>James Clear</i></p>
-  <br><img src="Atomic Habits.jpg">
-    <br><a href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank">Tonton Summary di YouTube</a><br>
-  <p><u>3. How to Win Friends and Influence People</u> — <i>Dale Carnegie</i></p>
-    <br><img src="How to win friends.jpg">
-    <br><a href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank">Tonton Summary di YouTube</a><br>
+    <!-- STEP 6: daftar buku jadi grid kartu yang responsif -->
+    <div class="daftar-buku">
 
-  <hr />
+      <article class="kartu-buku">
+        <h3>1. Psycho-Cybernetics</h3>
+        <p class="penulis">Maxwell Maltz</p>
+        <img src="psychocybernetics.jpeg" alt="Sampul Psycho-Cybernetics" />
+        <a href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank" rel="noopener">Tonton Summary di YouTube</a>
+      </article>
 
-  <h2 style="color: #1E2761;">Kenapa Membaca?</h2>
+      <article class="kartu-buku">
+        <h3>2. Atomic Habits</h3>
+        <p class="penulis">James Clear</p>
+        <!-- nama file disamakan dengan repo (huruf kecil) -->
+        <img src="atomic habits.jpg" alt="Sampul Atomic Habits" />
+        <a href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank" rel="noopener">Tonton Summary di YouTube</a>
+      </article>
 
-  <p style="font-family: 'font1', Arial, sans-serif; font-size: 20px; color: #C44545;">
-    Satu buku bisa mengubah cara kita memandang diri sendiri.
-  </p>
+      <article class="kartu-buku">
+        <h3>3. How to Win Friends and Influence People</h3>
+        <p class="penulis">Dale Carnegie</p>
+        <img src="How to win friends.jpg" alt="Sampul How to Win Friends" />
+        <a href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank" rel="noopener">Tonton Summary di YouTube</a>
+      </article>
 
-  <p style="font-family: 'font2', Georgia, serif; font-size: 16px; color: #5EA854; font-weight: bold;">
-    Kebiasaan kecil yang konsisten mengalahkan motivasi sesaat.
-  </p>
+    </div>
 
-  <p style="color: #F2C94C; background-color: #1E2761; padding: 10px; font-size: 18px;">
-    Tips: baca <mark>10 halaman sehari</mark>, sisanya mengikuti.
-  </p>
+    <hr />
 
-  <hr />
+    <h2>Kenapa Membaca?</h2>
+    <p class="kutipan-merah">Satu buku bisa mengubah cara kita memandang diri sendiri.</p>
+    <p class="kutipan-hijau">Kebiasaan kecil yang konsisten mengalahkan motivasi sesaat.</p>
+    <p class="kotak-tips">Tips: baca <mark>10 halaman sehari</mark>, sisanya mengikuti.</p>
 
-  <p style="color: #5A6182; font-size: 13px;">
-    Lanjut ke <a href="halaman2.html">Halaman 2 — Review Buku</a>
-  </p>
+    <hr />
 
+    <footer>
+      Lanjut ke <a href="halaman2.html">Halaman 2 — Review Buku</a>
+    </footer>
+
+  </div>
 </body>
 </html>

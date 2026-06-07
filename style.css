@@ -1,0 +1,138 @@
+/* ============================================================
+   STYLE.CSS — Rekomendasi Buku (versi responsif)
+   Pendekatan: MOBILE-FIRST (style dasar = HP, lalu diperbesar)
+   ============================================================ */
+
+/* --- Font kustom dari repo --- */
+@font-face { font-family: 'font1'; src: url('font1.ttf'); }
+@font-face { font-family: 'font2'; src: url('font2.ttf'); }
+@font-face { font-family: 'font3'; src: url('font3.ttf'); }
+
+/* --- Variabel warna (palet asli proyek) --- */
+:root {
+  --navy-tua:  #0F1535;
+  --navy:      #1E2761;
+  --abu:       #5A6182;
+  --biru-muda: #CADCFC;
+  --merah:     #C44545;
+  --hijau:     #5EA854;
+  --kuning:    #F2C94C;
+}
+
+/* STEP 2: reset + box-sizing supaya padding tidak menambah lebar */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--navy-tua);
+  line-height: 1.6;
+  /* padding pakai clamp: kecil di HP, lega di PC */
+  padding: clamp(16px, 4vw, 40px);
+}
+
+/* STEP 3: container dengan max-width agar nyaman di monitor lebar */
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* --- Navigasi --- */
+nav {
+  background-color: var(--biru-muda);
+  padding: 12px clamp(12px, 3vw, 24px);
+  margin-bottom: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;          /* link turun ke bawah kalau HP sempit */
+  gap: 8px 18px;
+}
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
+
+/* STEP 5: tipografi fluid pakai clamp() (vw dipakai dengan aman) */
+h1 {
+  font-family: 'font3', Arial, sans-serif;
+  color: var(--navy);
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  margin-bottom: 12px;
+}
+h2 {
+  color: var(--navy);
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  margin: 24px 0 12px;
+}
+p { margin-bottom: 12px; }
+.intro { color: var(--abu); font-style: italic; }
+
+hr { border: none; border-top: 1px solid var(--biru-muda); margin: 28px 0; }
+
+/* STEP 4: gambar responsif — tidak akan melebihi lebar layar */
+img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+
+.gambar-utama { max-width: 250px; margin: 16px 0; }
+
+/* STEP 6: daftar buku jadi grid yang menyesuaikan sendiri */
+.daftar-buku {
+  display: grid;
+  grid-template-columns: 1fr;            /* HP: 1 kolom */
+  gap: 24px;
+}
+.kartu-buku {
+  background: #fff;
+  border: 1px solid var(--biru-muda);
+  border-radius: 12px;
+  padding: 16px;
+}
+.kartu-buku img { margin: 12px 0; max-width: 180px; }
+.kartu-buku h3 { color: var(--navy); margin-bottom: 4px; }
+.kartu-buku .penulis { color: var(--abu); font-style: italic; }
+.kartu-buku a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--navy);
+  font-weight: bold;
+}
+
+/* --- Kotak kutipan --- */
+.kutipan-merah  { font-family: 'font1', Arial, sans-serif; font-size: clamp(1rem, 3vw, 1.25rem); color: var(--merah); }
+.kutipan-hijau  { font-family: 'font2', Georgia, serif; font-weight: bold; color: var(--hijau); }
+.kotak-tips {
+  color: var(--kuning);
+  background-color: var(--navy);
+  padding: clamp(10px, 2vw, 16px);
+  border-radius: 8px;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+}
+.kotak-tips mark { background: var(--kuning); padding: 0 4px; border-radius: 3px; }
+
+footer { color: var(--abu); font-size: 0.85rem; margin-top: 24px; }
+
+/* ============================================================
+   STEP 7: MEDIA QUERIES — titik device sesuai target
+   Base style di atas = HP Android & iPhone kecil (360–430px)
+   ============================================================ */
+
+/* HP besar / iPhone Pro Max */
+@media (min-width: 480px) {
+  .daftar-buku { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  nav { gap: 8px 28px; }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  .daftar-buku { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* PC / monitor lebar */
+@media (min-width: 1280px) {
+  body { padding: 40px clamp(40px, 6vw, 80px); }
+}
