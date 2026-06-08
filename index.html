@@ -4,107 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Halaman 1 - Rekomendasi Buku</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Halaman 1 memakai gaya blueprint -> index.css -->
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  <div class="sheet">
+    <!-- crop marks -->
+    <span class="tick tl"></span>
+    <span class="tick tr"></span>
+    <span class="tick bl"></span>
+    <span class="tick br"></span>
 
-  <!-- NAVIGASI -->
-  <header class="topbar">
-    <div class="container">
-      <div class="brand">Rekomendasi Buku<span class="dot">.</span></div>
+    <!-- NAV PILL -->
+    <header class="navpill up">
+      <span class="logo">rekomendasi</span>
       <nav>
-        <ul class="menu">
-          <li><a href="index.html" class="is-active">Halaman 1</a></li>
-          <li><a href="halaman2.html">Halaman 2</a></li>
-          <li><a href="halaman3.html">Halaman 3</a></li>
-        </ul>
+        <a href="index.html" class="is-active">Hal 1</a>
+        <a href="halaman2.html">Hal 2</a>
+        <a href="halaman3.html">Hal 3</a>
       </nav>
-    </div>
-  </header>
+      <a class="btn-accent" href="halaman2.html">Review &#8599;</a>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow reveal">Self Development &middot; 2026</span>
-        <h1 class="reveal d1">Buku yang <span class="hl">mengubah</span> cara berpikir.</h1>
-        <p class="lead reveal d2">Berikut beberapa buku yang menurut saya worth it dibaca &mdash; pelan-pelan, satu per satu.</p>
+    <!-- HERO -->
+    <main class="hero">
+      <div class="hero-left">
+        <div class="fig up d1">FIG.01 &nbsp;&middot;&nbsp; Rekomendasi Buku 2026</div>
+        <h1 class="wordmark up d1">baca<span class="reg">&reg;</span></h1>
+        <p class="subhead up d2">Buku self-development yang <span class="hl">mengubah cara berpikir</span>.</p>
       </div>
-      <figure class="hero-figure reveal d3">
-        <img src="img3.png" alt="Suasana tenang untuk membaca" />
+
+      <figure class="plate up d3">
+        <img src="robot-reading.jpeg" alt="Ilustrasi robot membaca buku di tengah keramaian orang menatap ponsel" />
+        <figcaption>
+          <span>PLATE 01 &middot; membaca vs. terdistraksi</span>
+          <span>ilustrasi: Asier</span>
+        </figcaption>
       </figure>
-    </div>
-  </section>
+    </main>
 
-  <!-- DAFTAR BUKU -->
-  <section class="section" id="daftar">
-    <div class="container">
-      <div class="section-head">
-        <span class="num">01</span>
-        <h2>Daftar Buku</h2>
+    <!-- BARIS BAWAH -->
+    <section class="bottom">
+
+      <!-- DAFTAR BUKU (ala bill of materials) -->
+      <div class="bom up d4">
+        <div class="bom-head"><span>Daftar Buku</span><span>03 Item</span></div>
+        <a class="bom-row" href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank" rel="noopener">
+          <span class="idx">01</span><span>Psycho-Cybernetics</span><span class="tag">Maltz</span>
+        </a>
+        <a class="bom-row" href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank" rel="noopener">
+          <span class="idx">02</span><span>Atomic Habits</span><span class="tag">Clear</span>
+        </a>
+        <a class="bom-row" href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank" rel="noopener">
+          <span class="idx">03</span><span>How to Win Friends</span><span class="tag">Carnegie</span>
+        </a>
       </div>
 
-      <div class="daftar-buku">
-
-        <article class="kartu-buku">
-          <div class="num-badge">1</div>
-          <img class="cover" src="psychocybernetics.jpeg" alt="Sampul Psycho-Cybernetics" />
-          <h3>Psycho-Cybernetics</h3>
-          <p class="penulis">Maxwell Maltz</p>
-          <a class="tonton" href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank" rel="noopener">
-            Tonton Summary <span class="arrow">&#8599;</span>
-          </a>
-        </article>
-
-        <article class="kartu-buku">
-          <div class="num-badge">2</div>
-          <img class="cover" src="atomic habits.jpg" alt="Sampul Atomic Habits" />
-          <h3>Atomic Habits</h3>
-          <p class="penulis">James Clear</p>
-          <a class="tonton" href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank" rel="noopener">
-            Tonton Summary <span class="arrow">&#8599;</span>
-          </a>
-        </article>
-
-        <article class="kartu-buku">
-          <div class="num-badge">3</div>
-          <img class="cover" src="How to win friends.jpg" alt="Sampul How to Win Friends" />
-          <h3>How to Win Friends &amp; Influence People</h3>
-          <p class="penulis">Dale Carnegie</p>
-          <a class="tonton" href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank" rel="noopener">
-            Tonton Summary <span class="arrow">&#8599;</span>
-          </a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- KENAPA MEMBACA -->
-  <section class="section" id="kenapa">
-    <div class="container">
-      <div class="section-head">
-        <span class="num">02</span>
-        <h2>Kenapa Membaca?</h2>
+      <!-- TITLE BLOCK (ala lembar gambar teknik) -->
+      <div class="titleblock up d4">
+        <div class="tb-row"><div class="k">Koleksi</div><div class="v">Self-Dev</div></div>
+        <div class="tb-row"><div class="k">Unit</div><div class="v big">Rekomendasi Buku</div></div>
+        <div class="tb-row"><div class="k">Tahun</div><div class="v">2026 &middot; Rev A</div></div>
+        <div class="tb-row"><div class="k">Kurator</div><div class="v">ctwiguna</div></div>
+        <div class="tb-row"><div class="k">Lembar</div><div class="v">1 of 3</div></div>
       </div>
 
-      <div class="kutipan-list">
-        <p class="kutipan">Satu buku bisa mengubah cara kita memandang diri sendiri.</p>
-        <p class="kutipan">Kebiasaan kecil yang konsisten mengalahkan motivasi sesaat.</p>
-      </div>
-
-      <div class="tips">
-        <strong>Tips:</strong> baca <mark>10 halaman sehari</mark>, sisanya akan mengikuti dengan sendirinya.
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      Lanjut ke <a href="halaman2.html">Halaman 2 &mdash; Review Buku &#8594;</a>
-    </div>
-  </footer>
-
+    </section>
+  </div>
 </body>
 </html>

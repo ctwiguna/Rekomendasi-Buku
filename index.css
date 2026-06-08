@@ -1,0 +1,218 @@
+/* ============================================================
+   INDEX.CSS — Halaman 1 (gaya "technical blueprint" mecka.ai)
+   Latar krem + grid, bingkai + crop marks, font monospace,
+   wordmark raksasa, aksen oranye bata.
+   Hanya dipakai oleh index.html.
+   ------------------------------------------------------------
+   Catatan unit responsif (vw / vh / vmin / vmax):
+   - vmin -> jarak bingkai & crop mark (aman di potret HP & lanskap)
+   - vw   -> ukuran wordmark raksasa (ikut lebar layar) via clamp()
+   - dvh  -> tinggi lembar penuh (vh yang aman dari address bar HP)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --cream:   #EFEAE0;   /* kertas */
+  --cream-2: #F6F2E9;   /* panel/pill */
+  --ink:     #23201B;   /* tinta gelap hangat */
+  --ink-50:  rgba(35, 32, 27, 0.55);
+  --line:    rgba(35, 32, 27, 0.22);
+  --grid:    rgba(35, 32, 27, 0.055);
+  --orange:  #C75D34;   /* aksen bata */
+
+  --mono:    'Space Mono', monospace;
+  --grotesk: 'Space Grotesk', sans-serif;
+
+  --inset: clamp(12px, 2.4vmin, 26px);   /* jarak bingkai dari tepi */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--grotesk);
+  color: var(--ink);
+  background-color: var(--cream);
+  /* grid kertas milimeter */
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+  padding: var(--inset);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- LEMBAR BERBINGKAI ---------- */
+.sheet {
+  position: relative;
+  min-height: calc(100dvh - (2 * var(--inset)));
+  border: 1px solid var(--line);
+  padding: clamp(18px, 3.2vmin, 40px);
+  display: flex; flex-direction: column;
+  gap: clamp(24px, 4vh, 56px);
+}
+
+/* crop marks di empat sudut */
+.tick { position: absolute; width: 16px; height: 16px; }
+.tick::before, .tick::after { content: ''; position: absolute; background: var(--ink); }
+.tick::before { left: 50%; top: 0; width: 1px; height: 100%; transform: translateX(-50%); }
+.tick::after  { top: 50%; left: 0; height: 1px; width: 100%; transform: translateY(-50%); }
+.tick.tl { top: -8px;  left: -8px; }
+.tick.tr { top: -8px;  right: -8px; }
+.tick.bl { bottom: -8px; left: -8px; }
+.tick.br { bottom: -8px; right: -8px; }
+
+/* ---------- NAV PILL ---------- */
+.navpill {
+  align-self: center;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px 18px;
+  background: var(--cream-2);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 10px 12px 10px 20px;
+  box-shadow: 0 10px 30px rgba(35, 32, 27, 0.08);
+}
+.navpill .logo {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--grotesk); font-weight: 700; font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.navpill .logo::before {
+  content: ''; width: 16px; height: 16px;
+  border: 2px solid var(--ink); border-radius: 4px;
+}
+.navpill nav { display: flex; flex-wrap: wrap; gap: 16px; }
+.navpill nav a {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-50); text-decoration: none; padding: 4px 0;
+  transition: color 0.2s ease;
+}
+.navpill nav a:hover, .navpill nav a.is-active { color: var(--ink); }
+.btn-accent {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--orange); color: var(--cream-2);
+  text-decoration: none; padding: 11px 18px; border-radius: 999px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.btn-accent:hover { transform: translateY(-1px); filter: brightness(1.06); }
+
+/* ---------- HERO ---------- */
+.hero {
+  flex: 1;
+  display: grid; grid-template-columns: 1fr; gap: clamp(20px, 5vw, 56px);
+  align-items: center;
+}
+.fig {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: clamp(0.62rem, 1.5vw, 0.8rem);
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-50);
+  margin-bottom: clamp(14px, 2vw, 24px);
+}
+.fig::before { content: ''; width: 42px; height: 1px; background: var(--orange); }
+
+/* WORDMARK RAKSASA — ukuran ikut lebar layar (vw) */
+.wordmark {
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: clamp(3.4rem, 18vw, 15rem);
+  line-height: 0.82; letter-spacing: -0.04em;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: clamp(10px, 1.6vw, 22px);
+  display: inline-block;
+}
+.wordmark .reg { font-size: 0.18em; vertical-align: super; font-weight: 500; }
+
+.subhead {
+  font-family: var(--grotesk); font-weight: 500;
+  font-size: clamp(1.25rem, 3.2vw, 2.3rem);
+  line-height: 1.15; letter-spacing: -0.01em;
+  margin-top: clamp(18px, 2.5vw, 30px); max-width: 16ch;
+}
+.subhead .hl { color: var(--orange); }
+
+/* PLAT GAMBAR (ilustrasi robot) */
+.plate { position: relative; justify-self: center; width: 100%; }
+.plate img {
+  display: block; width: 100%; height: auto;
+  /* tinggi dibatasi pakai vh supaya selalu muat di layar */
+  max-height: clamp(280px, 46vh, 660px);
+  object-fit: contain;
+  filter: drop-shadow(0 14px 30px rgba(35, 32, 27, 0.12));
+}
+.plate figcaption {
+  font-family: var(--mono); font-size: clamp(0.6rem, 1.3vw, 0.74rem);
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-50);
+  margin-top: 12px; display: flex; justify-content: space-between; gap: 12px;
+}
+
+/* ---------- BARIS BAWAH: DAFTAR BUKU + TITLE BLOCK ---------- */
+.bottom {
+  display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px);
+  justify-content: space-between; align-items: flex-end;
+}
+
+/* daftar buku ala "bill of materials" */
+.bom { flex: 1 1 300px; max-width: 440px; }
+.bom-head {
+  display: flex; justify-content: space-between;
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding-bottom: 10px; border-bottom: 1px solid var(--line); margin-bottom: 4px;
+}
+.bom-row {
+  display: grid; grid-template-columns: 2.4em 1fr auto; align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: clamp(0.78rem, 1.6vw, 0.92rem);
+  text-decoration: none; color: var(--ink);
+  padding: 11px 10px; border-bottom: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, padding-left 0.2s ease;
+}
+.bom-row .idx { color: var(--ink-50); }
+.bom-row .tag {
+  font-size: 0.72em; letter-spacing: 0.1em;
+  color: var(--ink-50); border: 1px solid var(--line);
+  padding: 2px 8px; border-radius: 4px;
+}
+.bom-row:hover {
+  background: rgba(199, 93, 52, 0.08);
+  border-left-color: var(--orange); padding-left: 16px;
+}
+.bom-row:hover .tag { color: var(--orange); border-color: var(--orange); }
+
+/* title block ala lembar gambar teknik */
+.titleblock {
+  flex: 0 1 360px;
+  border: 1px solid var(--line);
+  font-family: var(--mono); font-size: clamp(0.66rem, 1.4vw, 0.78rem);
+}
+.tb-row { display: grid; grid-template-columns: 38% 62%; }
+.tb-row + .tb-row { border-top: 1px solid var(--line); }
+.tb-row .k {
+  padding: 9px 12px; color: var(--ink-50);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-right: 1px solid var(--line);
+}
+.tb-row .v {
+  padding: 9px 12px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.tb-row .v.big { font-family: var(--grotesk); font-size: 1.15rem; letter-spacing: -0.01em; }
+
+/* ---------- ANIMASI MASUK ---------- */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+.up.d1 { animation-delay: 0.08s; }
+.up.d2 { animation-delay: 0.18s; }
+.up.d3 { animation-delay: 0.28s; }
+.up.d4 { animation-delay: 0.38s; }
+@media (prefers-reduced-motion: reduce) {
+  .up { animation: none !important; opacity: 1 !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- BREAKPOINT (HP -> tablet -> laptop/PC) ---------- */
+@media (min-width: 860px) {
+  .hero { grid-template-columns: 1.15fr 0.85fr; }
+  .navpill { padding-right: 12px; }
+}
