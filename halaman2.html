@@ -4,82 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Halaman 2 - Review Buku</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  <div class="sheet">
+    <span class="tick tl"></span>
+    <span class="tick tr"></span>
+    <span class="tick bl"></span>
+    <span class="tick br"></span>
 
-  <!-- NAVIGASI -->
-  <header class="topbar">
-    <div class="container">
-      <div class="brand">Rekomendasi Buku<span class="dot">.</span></div>
+    <!-- NAV PILL -->
+    <header class="navpill up">
+      <span class="logo">rekomendasi</span>
       <nav>
-        <ul class="menu">
-          <li><a href="index.html">Halaman 1</a></li>
-          <li><a href="halaman2.html" class="is-active">Halaman 2</a></li>
-          <li><a href="halaman3.html">Halaman 3</a></li>
-        </ul>
+        <a href="index.html">Hal 1</a>
+        <a href="halaman2.html" class="is-active">Hal 2</a>
+        <a href="halaman3.html">Hal 3</a>
       </nav>
-    </div>
-  </header>
+      <a class="btn-accent" href="halaman3.html">Tips &#8599;</a>
+    </header>
 
-  <!-- HEADER HALAMAN -->
-  <section class="page-hero">
-    <div class="container">
-      <span class="eyebrow reveal">Bagian 02</span>
-      <h1 class="reveal d1">Review Buku</h1>
-      <p class="lead reveal d2">Catatan singkat dari dua buku favorit &mdash; apa intinya dan kenapa layak dibaca.</p>
-    </div>
-  </section>
+    <!-- HEADER -->
+    <section class="page-head">
+      <div class="fig up d1">FIG.02 &nbsp;&middot;&nbsp; Review Buku</div>
+      <h1 class="wordmark sm up d1">review</h1>
+      <p class="subhead up d2">Catatan singkat dari dua buku &mdash; <span class="hl">apa intinya</span>.</p>
+    </section>
 
-  <!-- REVIEW -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-
-      <article class="review">
-        <figure class="review-figure">
-          <img src="img1.png" alt="Ilustrasi suasana reflektif" />
-        </figure>
-        <div class="review-body">
-          <span class="kicker">Maxwell Maltz</span>
-          <h2>Psycho-Cybernetics</h2>
-          <p>Buku ini membahas bagaimana <em>self-image</em> memengaruhi keberhasilan kita. Ubah dulu gambaran diri, maka perilaku akan mengikuti.</p>
-          <a class="tonton" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-            Tonton ringkasan <span class="arrow">&#8599;</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="review">
-        <figure class="review-figure">
-          <img src="img2.png" alt="Ilustrasi pemandangan" />
-        </figure>
-        <div class="review-body">
-          <span class="kicker">James Clear</span>
-          <h2>Atomic Habits</h2>
-          <p>James Clear menunjukkan bahwa perubahan 1% setiap hari menumpuk jadi hasil besar. Fokus pada sistem, bukan sekadar tujuan.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <p class="lead" style="margin-bottom:18px;">Punya rekomendasi buku lain?</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:contoh@email.com">Kirim Email &#8594;</a>
-        <a class="btn" href="halaman3.html" style="background:var(--teal);color:var(--ink);">Lanjut ke Halaman 3</a>
+    <!-- REVIEW 01 -->
+    <article class="spec up d3">
+      <figure class="plate">
+        <img src="img1.png" alt="Ilustrasi suasana reflektif" />
+        <figcaption><span>PLATE 01 &middot; self-image</span><span>MK-002</span></figcaption>
+      </figure>
+      <div>
+        <div class="spec-idx">01 / Maxwell Maltz</div>
+        <h2>Psycho-Cybernetics</h2>
+        <p>Membahas bagaimana <em>self-image</em> memengaruhi keberhasilan kita. Ubah dulu gambaran diri, maka perilaku akan mengikuti.</p>
+        <a class="link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Tonton ringkasan <span class="arrow">&#8599;</span></a>
       </div>
-    </div>
-  </section>
+    </article>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <a href="index.html">&#8592; Kembali ke Halaman 1</a>
-    </div>
-  </footer>
+    <!-- REVIEW 02 -->
+    <article class="spec up d3">
+      <figure class="plate">
+        <img src="img2.png" alt="Ilustrasi pemandangan" />
+        <figcaption><span>PLATE 02 &middot; habit systems</span><span>MK-003</span></figcaption>
+      </figure>
+      <div>
+        <div class="spec-idx">02 / James Clear</div>
+        <h2>Atomic Habits</h2>
+        <p>Perubahan 1% setiap hari menumpuk jadi hasil besar. Fokus pada sistem, bukan sekadar tujuan.</p>
+      </div>
+    </article>
 
+    <!-- CTA -->
+    <div class="kicker-line">Punya rekomendasi lain?</div>
+    <div class="linkbar">
+      <a class="btn-accent" href="mailto:contoh@email.com">Kirim Email &#8599;</a>
+      <a class="btn-ghost" href="halaman3.html">Lanjut ke Tips &#8594;</a>
+      <a class="btn-ghost" href="index.html">&#8592; Halaman 1</a>
+    </div>
+  </div>
 </body>
 </html>

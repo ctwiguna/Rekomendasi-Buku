@@ -4,69 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Halaman 3 - Tips Membaca</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  <div class="sheet">
+    <span class="tick tl"></span>
+    <span class="tick tr"></span>
+    <span class="tick bl"></span>
+    <span class="tick br"></span>
 
-  <!-- NAVIGASI -->
-  <header class="topbar">
-    <div class="container">
-      <div class="brand">Rekomendasi Buku<span class="dot">.</span></div>
+    <!-- NAV PILL -->
+    <header class="navpill up">
+      <span class="logo">rekomendasi</span>
       <nav>
-        <ul class="menu">
-          <li><a href="index.html">Halaman 1</a></li>
-          <li><a href="halaman2.html">Halaman 2</a></li>
-          <li><a href="halaman3.html" class="is-active">Halaman 3</a></li>
-        </ul>
+        <a href="index.html">Hal 1</a>
+        <a href="halaman2.html">Hal 2</a>
+        <a href="halaman3.html" class="is-active">Hal 3</a>
       </nav>
-    </div>
-  </header>
+      <a class="btn-accent" href="index.html">Daftar Buku &#8599;</a>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow reveal">Bagian 03</span>
-        <h1 class="reveal d1" style="font-size:clamp(2.4rem,8vw,4.6rem);">Tips <span class="hl">Membaca</span></h1>
-        <p class="lead reveal d2">Supaya buku tidak cuma jadi pajangan di rak.</p>
+    <!-- HERO -->
+    <main class="hero">
+      <div class="hero-left">
+        <div class="fig up d1">FIG.03 &nbsp;&middot;&nbsp; Tips Membaca</div>
+        <h1 class="wordmark up d1">tips</h1>
+        <p class="subhead up d2">Supaya buku tidak cuma jadi <span class="hl">pajangan di rak</span>.</p>
       </div>
-      <figure class="hero-figure reveal d3">
+      <figure class="plate up d3">
         <img src="img3.png" alt="Suasana tenang untuk membaca" />
+        <figcaption><span>PLATE 03 &middot; ruang baca</span><span>MK-004</span></figcaption>
       </figure>
+    </main>
+
+    <!-- TIPS -->
+    <div class="kicker-line">Empat Tips Konsisten</div>
+    <section class="steps up d4">
+      <div class="step"><span class="n">01</span><span class="t">Mulai dari <mark>10 halaman sehari</mark>, jangan langsung berat.</span></div>
+      <div class="step"><span class="n">02</span><span class="t">Pilih buku sesuai minat, bukan yang sedang viral.</span></div>
+      <div class="step"><span class="n">03</span><span class="t">Catat satu kalimat favorit dari tiap bab.</span></div>
+      <div class="step"><span class="n">04</span><span class="t">Bawa buku ke mana-mana untuk mengisi waktu tunggu.</span></div>
+    </section>
+
+    <!-- PULL QUOTE -->
+    <blockquote class="pullquote">Tujuan membaca bukan menyelesaikan banyak buku, tapi memahami isinya.</blockquote>
+
+    <!-- PENUTUP -->
+    <div class="closing">Selamat membaca dan semoga konsisten!</div>
+
+    <!-- NAV BAWAH -->
+    <div class="linkbar" style="margin-top:clamp(24px,4vw,40px);">
+      <a class="btn-ghost" href="index.html">&#8592; Halaman 1</a>
+      <a class="btn-ghost" href="halaman2.html">Review Buku &#8594;</a>
     </div>
-  </section>
-
-  <!-- TIPS -->
-  <section class="section" id="tips" style="padding-top:0;">
-    <div class="container">
-      <div class="section-head">
-        <span class="num">01</span>
-        <h2>Empat Tips Konsisten</h2>
-      </div>
-
-      <ol class="tips-list">
-        <li>Mulai dari <mark>10 halaman sehari</mark>, jangan langsung berat.</li>
-        <li>Pilih buku sesuai minat, bukan yang sedang viral.</li>
-        <li>Catat satu kalimat favorit dari tiap bab.</li>
-        <li>Bawa buku ke mana-mana untuk mengisi waktu tunggu.</li>
-      </ol>
-
-      <blockquote class="pullquote">
-        Tujuan membaca bukan menyelesaikan banyak buku, tapi memahami dan menerapkan isinya.
-      </blockquote>
-
-      <div class="highlight-box">
-        Selamat membaca dan semoga konsisten!
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      Kembali ke <a href="index.html">Halaman 1 &mdash; Rekomendasi Buku &#8594;</a>
-    </div>
-  </footer>
-
+  </div>
 </body>
 </html>

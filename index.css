@@ -216,3 +216,109 @@ body {
   .hero { grid-template-columns: 1.15fr 0.85fr; }
   .navpill { padding-right: 12px; }
 }
+
+/* ============================================================
+   KOMPONEN HALAMAN 2 & 3 (gaya blueprint, dipakai bersama)
+   ============================================================ */
+
+/* header sub-halaman (wordmark lebih kecil) */
+.wordmark.sm { font-size: clamp(2.8rem, 12vw, 8.5rem); }
+.page-head { padding-bottom: clamp(8px, 2vh, 24px); }
+
+/* --- SPEC / REVIEW (gambar + teks teknis, bergantian) --- */
+.spec {
+  display: grid; grid-template-columns: 1fr; gap: clamp(18px, 4vw, 48px);
+  align-items: center;
+  padding: clamp(24px, 4vw, 48px) 0;
+  border-top: 1px solid var(--line);
+}
+.spec .plate img { max-height: clamp(220px, 38vh, 460px); }
+.spec-idx {
+  font-family: var(--mono); font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange);
+  margin-bottom: 12px;
+}
+.spec h2 {
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 3.2rem); line-height: 0.95;
+  letter-spacing: -0.02em; margin-bottom: 10px;
+}
+.spec .author {
+  font-family: var(--mono); font-size: 0.78rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-50);
+  margin-bottom: 18px;
+}
+.spec p {
+  font-family: var(--grotesk); font-weight: 400;
+  font-size: clamp(1rem, 2.2vw, 1.25rem); line-height: 1.45;
+  max-width: 48ch; margin-bottom: 20px;
+}
+.spec .link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 2px solid var(--orange); padding-bottom: 3px;
+}
+.spec .link .arrow { transition: transform 0.25s ease; }
+.spec .link:hover .arrow { transform: translate(3px, -3px); }
+
+@media (min-width: 860px) {
+  .spec { grid-template-columns: 0.9fr 1.1fr; }
+  .spec:nth-of-type(even) .plate { order: 2; }
+}
+
+/* --- DAFTAR TIPS bernomor (ala bill of materials) --- */
+.steps { border-top: 1px solid var(--line); }
+.step {
+  display: grid; grid-template-columns: 3em 1fr; align-items: baseline; gap: 16px;
+  padding: clamp(14px, 2.4vw, 22px) 6px;
+  border-bottom: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, padding-left 0.2s ease;
+}
+.step .n { font-family: var(--mono); font-size: 1.05rem; color: var(--orange); }
+.step .t {
+  font-family: var(--grotesk); font-weight: 500;
+  font-size: clamp(1.05rem, 2.6vw, 1.5rem); line-height: 1.25;
+}
+.step mark { background: rgba(199, 93, 52, 0.18); color: var(--ink); padding: 0 6px; border-radius: 3px; }
+.step:hover { background: rgba(199, 93, 52, 0.06); border-left-color: var(--orange); padding-left: 14px; }
+
+/* --- PULL QUOTE --- */
+.pullquote {
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: clamp(1.6rem, 4.5vw, 3rem); line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: clamp(32px, 6vw, 64px) 0;
+  padding-left: clamp(16px, 2.5vw, 28px); border-left: 4px solid var(--orange);
+  max-width: 24ch;
+}
+
+/* --- KOTAK PENUTUP --- */
+.closing {
+  background: var(--orange); color: var(--cream-2);
+  padding: clamp(22px, 4vw, 40px);
+  font-family: var(--grotesk); font-weight: 700;
+  font-size: clamp(1.3rem, 3.2vw, 2rem); line-height: 1.1; letter-spacing: -0.01em;
+}
+
+/* --- BARIS TOMBOL / CTA --- */
+.linkbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn-ghost {
+  font-family: var(--mono); font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border: 1px solid var(--line); padding: 11px 18px; border-radius: 999px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-ghost:hover { border-color: var(--ink); }
+
+/* label seksi mono */
+.kicker-line {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: clamp(0.62rem, 1.5vw, 0.8rem);
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-50);
+  margin: clamp(28px, 5vh, 56px) 0 clamp(16px, 2vw, 24px);
+}
+.kicker-line::before { content: ''; width: 42px; height: 1px; background: var(--orange); }
