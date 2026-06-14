@@ -3,73 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Halaman 1 - Rekomendasi Buku</title>
-  <!-- Halaman 1 memakai gaya blueprint -> index.css -->
+  <title>Rekomendasi Buku — Self Development Unit</title>
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  <nav>
+    <span class="brand">Rekomendasi Buku <b>by</b> Chandra Tabligh Wiguna</span>
+    <span class="menu">
+      <a href="index.html" class="active">Beranda</a>
+      <a href="halaman2.html">Perbandingan</a>
+      <a href="halaman3.html">Tentang &amp; Sumber</a>
+    </span>
+  </nav>
+
   <div class="sheet">
-    <!-- crop marks -->
-    <span class="tick tl"></span>
-    <span class="tick tr"></span>
-    <span class="tick bl"></span>
-    <span class="tick br"></span>
+    <span class="cross tl">+</span><span class="cross tr">+</span>
+    <span class="cross bl">+</span><span class="cross br">+</span>
 
-    <!-- NAV PILL -->
-    <header class="navpill up">
-      <span class="logo">rekomendasi</span>
-      <nav>
-        <a href="index.html" class="is-active">Hal 1</a>
-        <a href="halaman2.html">Hal 2</a>
-        <a href="halaman3.html">Hal 3</a>
-      </nav>
-      <a class="btn-accent" href="halaman2.html">Review &#8599;</a>
-    </header>
+    <p class="label"><span class="dash">—</span>PAGE.01 · SELAMAT DATANG, GUYS!</p>
 
-    <!-- HERO -->
-    <main class="hero">
-      <div class="hero-left">
-        <div class="fig up d1">FIG.01 &nbsp;&middot;&nbsp; Rekomendasi Buku 2026</div>
-        <h1 class="wordmark up d1">baca<span class="reg">&reg;</span></h1>
-        <p class="subhead up d2">Buku self-development yang <span class="hl">mengubah cara berpikir</span>.</p>
+    <div class="hero">
+      <div class="col-text">
+        <h1 class="display">Rekomendasi<br />Buku.</h1>
+        <p class="subtitle">Selain hobi, kenapa sih <span class="accent">chandra</span> bikin ini?</p>
+        <p class="lead">
+          Di era AI ini, hampir semua orang <strong>doomscrolling</strong>. Kecanduan
+          sosial media, gosip, ngikutin tren dan <em>informasi-informasi yang sebenernya
+          gaada gunanya</em> buat kita. Pada sisi yang lain: hardware, software, algoritma
+          semuanya selalu <u>improve</u> dari sisi kecerdasan dan efisiensi. Kapan kamu
+          improve? <mark>Kapan terakhir kali kamu baca / belajar sesuatu yang baru?</mark>
+        </p>
+        <a href="halaman2.html" class="cta">Okedeh, aku mau belajar →</a>
       </div>
 
-      <figure class="plate up d3">
-        <img src="robot-reading.jpeg" alt="Ilustrasi robot membaca buku di tengah keramaian orang menatap ponsel" />
-        <figcaption>
-          <span>PLATE 01 &middot; membaca vs. terdistraksi</span>
-          <span>ilustrasi: Asier</span>
-        </figcaption>
-      </figure>
-    </main>
-
-    <!-- BARIS BAWAH -->
-    <section class="bottom">
-
-      <!-- DAFTAR BUKU (ala bill of materials) -->
-      <div class="bom up d4">
-        <div class="bom-head"><span>Daftar Buku</span><span>03 Item</span></div>
-        <a class="bom-row" href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank" rel="noopener">
-          <span class="idx">01</span><span>Psycho-Cybernetics</span><span class="tag">Maltz</span>
-        </a>
-        <a class="bom-row" href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank" rel="noopener">
-          <span class="idx">02</span><span>Atomic Habits</span><span class="tag">Clear</span>
-        </a>
-        <a class="bom-row" href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank" rel="noopener">
-          <span class="idx">03</span><span>How to Win Friends</span><span class="tag">Carnegie</span>
-        </a>
+      <div class="col-side">
+        <div class="plate">
+          <img src="robot-reading.jpeg" alt="Suasana tenang untuk membaca" />
+          <div class="cap"><span>FIG.01 — READING MODE</span><span>IMG-001</span></div>
+        </div>
+        <div class="titleblock">
+          <div class="row"><div class="k">Unit</div><div class="v">REKOMENDASI BUKU</div></div>
+          <div class="row"><div class="k">Title</div><div class="v">SELF-DEVELOPMENT</div></div>
+          <div class="row"><div class="k">Web Code</div><div class="v">WCD - UTS-Cakrawala-2026</div></div>
+          <div class="row"><div class="k">Items</div><div class="v">3 OF 3</div></div>
+          <div class="row"><div class="k">Sheet</div><div class="v">1 OF 3</div></div>
+        </div>
       </div>
+    </div>
 
-      <!-- TITLE BLOCK (ala lembar gambar teknik) -->
-      <div class="titleblock up d4">
-        <div class="tb-row"><div class="k">Koleksi</div><div class="v">Self-Dev</div></div>
-        <div class="tb-row"><div class="k">Unit</div><div class="v big">Rekomendasi Buku</div></div>
-        <div class="tb-row"><div class="k">Tahun</div><div class="v">2026 &middot; Rev A</div></div>
-        <div class="tb-row"><div class="k">Kurator</div><div class="v">ctwiguna</div></div>
-        <div class="tb-row"><div class="k">Lembar</div><div class="v">1 of 3</div></div>
+    <hr class="divider" />
+
+    <div class="section-head">
+      <h2>Daftar Buku</h2>
+      <span class="label">BILL OF MATERIALS · 3 ENTRIES</span>
+    </div>
+
+    <div class="bom">
+      <div class="item">
+        <span class="no">01</span><span class="name">PSYCHO-CYBERNETICS</span>
+        <span class="by">— Maxwell Maltz</span><span class="spacer"></span>
+        <span class="tag">Read</span>
       </div>
+      <div class="item">
+        <span class="no">02</span><span class="name">ATOMIC HABITS</span>
+        <span class="by">— James Clear</span><span class="spacer"></span>
+        <span class="tag">Read</span>
+      </div>
+      <div class="item">
+        <span class="no">03</span><span class="name">HOW TO WIN FRIENDS</span>
+        <span class="by">— Dale Carnegie</span><span class="spacer"></span>
+        <span class="tag">Read</span>
+      </div>
+    </div>
 
-    </section>
+    <div class="plates">
+      <div class="plate">
+        <img src="psychocybernetics.jpeg" alt="Sampul Psycho-Cybernetics" />
+        <div class="cap"><span>Psycho-Cybernetics</span><span>01</span></div>
+      </div>
+      <div class="plate">
+        <img src="atomic habits.jpg" alt="Sampul Atomic Habits" />
+        <div class="cap"><span>Atomic Habits</span><span>02</span></div>
+      </div>
+      <div class="plate">
+        <img src="How to win friends.jpg" alt="Sampul How to Win Friends" />
+        <div class="cap"><span>How to Win Friends</span><span>03</span></div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <p class="label"><span class="dash">—</span>Kenapa si harus repot-repot baca?</p>
+    <h2>Kenapa Membaca?</h2>
+    <p class="lead">
+      Satu buku bisa mengubah cara kita memandang diri sendiri. Kebiasaan kecil
+      yang konsisten akan mengubah cara kita berpikir, cara kita memandang
+      permasalahan, cara kita menghadapi kesulitan, dan tentunya akan terus
+      <strong>compounding</strong> menjadi sebuah karakter yang jauh lebih baik
+      dari hari kemarin. Membaca juga terbukti secara <em>science</em> mengurangi
+      anxiety, depression, dan short attention span.
+    </p>
+    <div class="callout">
+      "Kamu tidak naik ke level tujuanmu — kamu turun ke level kebiasaanmu."
+      <span class="src">Ref · James Clear, Atomic Habits</span>
+    </div>
+
+    <footer>
+      <span>© 2026 REKOMENDASI BUKU</span>
+      <span>WEB CLIENT DEVELOPMENT · <a href="halaman2.html">NEXT →</a></span>
+    </footer>
   </div>
 </body>
 </html>

@@ -3,60 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Halaman 3 - Tips Membaca</title>
+  <title>Tentang &amp; Sumber — Rekomendasi Buku</title>
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  <nav>
+    <span class="brand">Rekomendasi Buku <b>by</b> Chandra Tabligh Wiguna</span>
+    <span class="menu">
+      <a href="index.html">Beranda</a>
+      <a href="halaman2.html">Perbandingan</a>
+      <a href="halaman3.html" class="active">Tentang &amp; Sumber</a>
+    </span>
+  </nav>
+
   <div class="sheet">
-    <span class="tick tl"></span>
-    <span class="tick tr"></span>
-    <span class="tick bl"></span>
-    <span class="tick br"></span>
+    <span class="cross tl">+</span><span class="cross tr">+</span>
+    <span class="cross bl">+</span><span class="cross br">+</span>
 
-    <!-- NAV PILL -->
-    <header class="navpill up">
-      <span class="logo">rekomendasi</span>
-      <nav>
-        <a href="index.html">Hal 1</a>
-        <a href="halaman2.html">Hal 2</a>
-        <a href="halaman3.html" class="is-active">Hal 3</a>
-      </nav>
-      <a class="btn-accent" href="index.html">Daftar Buku &#8599;</a>
-    </header>
+    <p class="label"><span class="dash">—</span>PAGE 03 · TONTON DULU PREVIEW NYA</p>
+    <h1 class="display">Tentang &amp;<br />Sumber.</h1>
+    <p class="subtitle">Kenapa topik ini dipilih, dan dari mana <span class="accent">ringkasannya.</span></p>
 
-    <!-- HERO -->
-    <main class="hero">
-      <div class="hero-left">
-        <div class="fig up d1">FIG.03 &nbsp;&middot;&nbsp; Tips Membaca</div>
-        <h1 class="wordmark up d1">tips</h1>
-        <p class="subhead up d2">Supaya buku tidak cuma jadi <span class="hl">pajangan di rak</span>.</p>
-      </div>
-      <figure class="plate up d3">
-        <img src="robot-reading.jpeg" alt="Ilustrasi robot membaca buku" />
-        <figcaption><span>PLATE 03 &middot; ruang baca</span><span>MK-004</span></figcaption>
-      </figure>
-    </main>
+    <p class="label"><span class="dash">—</span>SEC.01 · ABOUT</p>
+    <h2>Tentang Website Ini</h2>
+    <p class="lead">
+      Website ini dibuat untuk tugas <strong>Web Client Development</strong>. Saya memilih
+      topik buku self development karena <em>relevan dengan keseharian</em> dan mudah
+      dibagikan ke teman yang ingin mulai membaca tapi <u>bingung mulai dari buku apa</u>.
+    </p>
 
-    <!-- TIPS -->
-    <div class="kicker-line">Empat Tips Konsisten</div>
-    <section class="steps up d4">
-      <div class="step"><span class="n">01</span><span class="t">Mulai dari <mark>10 halaman sehari</mark>, jangan langsung berat.</span></div>
-      <div class="step"><span class="n">02</span><span class="t">Pilih buku sesuai minat, bukan yang sedang viral.</span></div>
-      <div class="step"><span class="n">03</span><span class="t">Catat satu kalimat favorit dari tiap bab.</span></div>
-      <div class="step"><span class="n">04</span><span class="t">Bawa buku ke mana-mana untuk mengisi waktu tunggu.</span></div>
-    </section>
+    <hr class="divider" />
 
-    <!-- PULL QUOTE -->
-    <blockquote class="pullquote">Tujuan membaca bukan menyelesaikan banyak buku, tapi memahami isinya.</blockquote>
-
-    <!-- PENUTUP -->
-    <div class="closing">Selamat membaca dan semoga konsisten!</div>
-
-    <!-- NAV BAWAH -->
-    <div class="linkbar" style="margin-top:clamp(24px,4vw,40px);">
-      <a class="btn-ghost" href="index.html">&#8592; Halaman 1</a>
-      <a class="btn-ghost" href="halaman2.html">Review Buku &#8594;</a>
+    <p class="label"><span class="dash">—</span>SEC.02 · REFERENCES</p>
+    <h2>Sumber Ringkasan</h2>
+    <div class="table-wrapper">
+      <table>
+        <caption>Tabel 2 — Tautan ringkasan video tiap buku.</caption>
+        <thead>
+          <tr><th>Buku</th><th>Tautan Ringkasan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Psycho-Cybernetics</strong></td>
+            <td><a class="accent" href="https://www.youtube.com/watch?v=Tl3CIm_4OnU" target="_blank" rel="noopener">YouTube Summary →</a></td></tr>
+          <tr><td><strong>Atomic Habits</strong></td>
+            <td><a class="accent" href="https://www.youtube.com/watch?v=a2YEiDTLjvg" target="_blank" rel="noopener">YouTube Summary →</a></td></tr>
+          <tr><td><strong>How to Win Friends</strong></td>
+            <td><a class="accent" href="https://www.youtube.com/watch?v=DI7vvxWAy2I" target="_blank" rel="noopener">YouTube Summary →</a></td></tr>
+        </tbody>
+      </table>
     </div>
+
+    <div class="callout">
+      Jangan tunggu <mark>mood</mark> bagus untuk membaca. Mulai saja dulu.
+      <span class="src">Note · RB-001</span>
+    </div>
+
+    <footer>
+      <span>© 2026 REKOMENDASI BUKU</span>
+      <span>SHEET 3 OF 3 · <a href="index.html">← HOME</a></span>
+    </footer>
   </div>
 </body>
 </html>
